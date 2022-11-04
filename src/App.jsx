@@ -1,4 +1,4 @@
-import { Routes, Route } from "@solidjs/router";
+import { Routes, Route, useLocation, useNavigate } from "@solidjs/router";
 import { lazy } from "solid-js";
 
 import MainMenu from "./pages/MainMenu";
@@ -6,6 +6,9 @@ import NotFound from "./pages/NotFound";
 import RockPaper from "./pages/RockPaper";
 
 const App = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
     return (
         <div className="bg-gray-900 w-full h-full sm:h-screen sm:w-screen flex items-center justify-evenly flex-col">
             <div className="mt-auto">
@@ -18,7 +21,18 @@ const App = () => {
                 </Routes>
             </div>
 
-            <p className="text-white font-medium text-sm mt-auto mb-6">This project is only for educational purposes</p>
+            <div className="mt-auto mb-6 space-y-2 flex items-center flex-col">
+                {location.pathname === "/rockpaper" ? (
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="h-12 w-20 text-center rounded-md border border-transparent bg-indigo-500  text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                ) : null}
+                <p className="text-white font-medium text-sm">This project is only for educational purposes</p>
+            </div>
         </div>
     );
 };
