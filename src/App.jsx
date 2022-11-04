@@ -4,7 +4,7 @@ import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
-    <div className="bg-gray-900 w-screen h-screen flex items-center justify-center">
+    <div className="bg-gray-900 w-full h-full sm:h-screen sm:w-screen flex items-center justify-center">
       <Routes>
         <Route path="/" component={<MainMenu />} />
 
