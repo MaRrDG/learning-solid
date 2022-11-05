@@ -2,7 +2,7 @@
 
 ## About project
 
-With this project I learned how to use [SolidJS](https://www.solidjs.com/). With this project I learned what is SolidJS and how to use it, how to use Router, how to use the Basic Reactivity, how to use Context, how to use the Control Flow that SolidJS offers us.
+With this project I learned how to use [SolidJS](https://www.solidjs.com/). I learned what is SolidJS and how to use it, how to use Router, how to use the Basic Reactivity, how to use Context, how to use the Control Flow that SolidJS offers us.
 
 Here you can play games like and you have some statistics for these:
 
