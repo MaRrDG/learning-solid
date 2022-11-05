@@ -30,6 +30,6 @@ Here you can play games and have some statistics for these:
     -   [x] Create the UI for statistics
     -   [x] Make an context for all statisctics.
     -   [x] Update statistics for Rock Paper Scissors every time when players play it.
--   [ ] Make a loader component.
+-   [x] Make a loader component.
 -   [ ] Make tic tac toe game:
 -   [ ] Make minesweeper game:

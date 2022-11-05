@@ -2,6 +2,7 @@ import { createSignal, For } from "solid-js";
 import clsx from "clsx";
 import { resetRockPaperSignals } from "../../utils";
 import { useStatistics } from "../../context/Statistics";
+import Loader from "../../components/Loader";
 
 // Variables
 const transition = "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300";
@@ -47,7 +48,7 @@ const RockPaper = () => {
                     <>
                         <h1 className="text-white uppercase font-medium text-2xl">Select your shape</h1>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 items-center">
-                            <For each={shapes} fallback={<div>Loading...</div>}>
+                            <For each={shapes} fallback={<Loader />}>
                                 {(item) => (
                                     <img
                                         src={`src/assets/images/${item.toLocaleLowerCase()}.png`}

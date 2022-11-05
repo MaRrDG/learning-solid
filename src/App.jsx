@@ -1,11 +1,11 @@
-import RockPaper from "./pages/RockPaper";
 import { Routes, Route, useLocation, useNavigate, A } from "@solidjs/router";
-import MainMenu from "./pages/MainMenu";
-import NotFound from "./pages/NotFound";
+import { StatisticsProvider } from "./context/Statistics";
 import { Show } from "solid-js";
 import { resetAllSignals } from "./utils";
+import RockPaper from "./pages/RockPaper";
+import MainMenu from "./pages/MainMenu";
+import NotFound from "./pages/NotFound";
 import Statistics from "./pages/Statistics";
-import { StatisticsProvider } from "./context/Statistics";
 
 const App = () => {
     const location = useLocation();

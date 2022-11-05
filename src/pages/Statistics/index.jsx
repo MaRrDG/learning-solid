@@ -1,4 +1,5 @@
 import { For } from "solid-js";
+import Loader from "../../components/Loader";
 import { useStatistics } from "../../context/Statistics";
 
 const tableHead = ["Game", "Wins", "Loses", "Equals"];
@@ -15,7 +16,7 @@ const Statistics = () => {
                 <table class="min-w-full divide-y divide-gray-300">
                     <thead class="bg-indigo-700">
                         <tr>
-                            <For each={tableHead} fallback={<div>Loading...</div>}>
+                            <For each={tableHead} fallback={<Loader />}>
                                 {(item) => (
                                     <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-100">
                                         {item}
@@ -25,7 +26,7 @@ const Statistics = () => {
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-gray-200">
-                        <For each={games} fallback={<div>Loading...</div>}>
+                        <For each={games} fallback={<Loader />}>
                             {(item, idx) => (
                                 <tr>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
