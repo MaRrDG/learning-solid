@@ -1,10 +1,10 @@
-![Preview](https://i.imgur.com/xgF8FVL.png)
+![Preview](https://i.imgur.com/vZKj7tm.png)
 
 ## About project
 
 With this project I learned how to use [SolidJS](https://www.solidjs.com/). I learned what is SolidJS and how to use it, how to use Router, how to use the Basic Reactivity, how to use Context, how to use the Control Flow that SolidJS offers us.
 
-Here you can play games like and you have some statistics for these:
+Here you can play games and have some statistics for these:
 
 1. Tic Tac Toe
 2. Rock Paper Scissors
@@ -17,6 +17,7 @@ Here you can play games like and you have some statistics for these:
 -   npm run serve - Run a local server that use production build using serve.
 
 ## Todo
+
 -   [x] Make rock paper scissors game:
     -   [x] Make the first screen to select your shape.
     -   [x] Make the randomize selection for Player2.
@@ -24,7 +25,10 @@ Here you can play games like and you have some statistics for these:
     -   [x] Make the logic for wins scenario.
 -   [x] Make a function for reset all signals.
 -   [x] Update readme.
--   [ ] Make a leaderboard:
-    -   [ ] Make an context for all statisctics
+-   [ ] Make a statistics:
+    -   [x] Added statistics route.
+    -   [x] Create the UI for statistics
+    -   [ ] Make an context for all statisctics.
+-   [ ] Make a loader component.
 -   [ ] Make tic tac toe game:
 -   [ ] Make minesweeper game:

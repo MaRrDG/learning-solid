@@ -1,9 +1,10 @@
-import RockPaper, { setShowFinal } from "./pages/RockPaper";
-import { Routes, Route, useLocation, useNavigate } from "@solidjs/router";
+import RockPaper from "./pages/RockPaper";
+import { Routes, Route, useLocation, useNavigate, A } from "@solidjs/router";
 import MainMenu from "./pages/MainMenu";
 import NotFound from "./pages/NotFound";
 import { Show } from "solid-js";
 import { resetAllSignals } from "./utils";
+import Statistics from "./pages/Statistics";
 
 const App = () => {
     const location = useLocation();
@@ -15,11 +16,18 @@ const App = () => {
                 <Routes>
                     <Route path="/" component={<MainMenu />} />
                     <Route path="/rockpaper" component={<RockPaper />} />
+                    <Route path="/statistics" component={<Statistics />} />
 
                     {/* PAGE NOT FOUND */}
                     <Route path="*" component={<NotFound />} />
                 </Routes>
             </div>
+
+            <Show when={location.pathname === "/"}>
+                <A href="/statistics" className="text-white hover:text-indigo-500 font-medium">
+                    See your statistics
+                </A>
+            </Show>
 
             <div className="mt-auto mb-6 space-y-2 flex items-center flex-col">
                 <Show when={location.pathname !== "/"}>
