@@ -1,34 +1,17 @@
-## Usage
+![Preview](https://i.postimg.cc/TY7J0LgQ/image.png)
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## About project
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+With this project I learned how to use [SolidJS](https://www.solidjs.com/). With this project I learned what is SolidJS and how to use it, how to use Router, how to use the Basic Reactivity, how to use Context, how to use the Control Flow that SolidJS offers us.
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+Here you can play games like and you have some statistics for these:
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+1. Tic Tac Toe
+2. Rock Paper Scissors
+3. Minesweeper
 
-## Available Scripts
+## Commands
 
-In the project directory, you can run:
-
-### `npm dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+-   npm start - Start the project using [VITE](https://vitejs.dev/).
+-   npm run build - Make production build.
+-   npm run serve - Run a local server that use production build using serve.

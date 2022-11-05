@@ -4,6 +4,7 @@
     -   [x] Make the second screen to show if you win or lose.
     -   [x] Make the logic for wins scenario.
 -   [x] Make a function for reset all signals.
+-   [x] Update readme.
 -   [ ] Make a leaderboard:
     -   [ ] Make an context for all statisctics
 -   [ ] Make tic tac toe game:
