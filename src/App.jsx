@@ -1,9 +1,7 @@
+import RockPaper, { setShowFinal } from "./pages/RockPaper";
 import { Routes, Route, useLocation, useNavigate } from "@solidjs/router";
-import { lazy } from "solid-js";
-
 import MainMenu from "./pages/MainMenu";
 import NotFound from "./pages/NotFound";
-import RockPaper from "./pages/RockPaper";
 
 const App = () => {
     const location = useLocation();
@@ -22,9 +20,14 @@ const App = () => {
             </div>
 
             <div className="mt-auto mb-6 space-y-2 flex items-center flex-col">
-                {location.pathname === "/rockpaper" ? (
+                {location.pathname !== "/" ? (
                     <button
-                        onClick={() => navigate(-1)}
+                        onClick={() => {
+                            navigate(-1);
+
+                            // Reset all signals
+                            setShowFinal(false);
+                        }}
                         className="h-12 w-20 text-center rounded-md border border-transparent bg-indigo-500  text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         type="button"
                     >
