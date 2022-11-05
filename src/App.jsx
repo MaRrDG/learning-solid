@@ -2,6 +2,7 @@ import RockPaper, { setShowFinal } from "./pages/RockPaper";
 import { Routes, Route, useLocation, useNavigate } from "@solidjs/router";
 import MainMenu from "./pages/MainMenu";
 import NotFound from "./pages/NotFound";
+import { Show } from "solid-js";
 
 const App = () => {
     const location = useLocation();
@@ -20,7 +21,7 @@ const App = () => {
             </div>
 
             <div className="mt-auto mb-6 space-y-2 flex items-center flex-col">
-                {location.pathname !== "/" ? (
+                <Show when={location.pathname !== "/"}>
                     <button
                         onClick={() => {
                             navigate(-1);
@@ -33,7 +34,7 @@ const App = () => {
                     >
                         Back
                     </button>
-                ) : null}
+                </Show>
                 <p className="text-white font-medium text-sm">This project is only for educational purposes</p>
             </div>
         </div>
