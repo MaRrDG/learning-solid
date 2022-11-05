@@ -25,10 +25,11 @@ Here you can play games and have some statistics for these:
     -   [x] Make the logic for wins scenario.
 -   [x] Make a function for reset all signals.
 -   [x] Update readme.
--   [ ] Make a statistics:
+-   [x] Make a statistics:
     -   [x] Added statistics route.
     -   [x] Create the UI for statistics
-    -   [ ] Make an context for all statisctics.
+    -   [x] Make an context for all statisctics.
+    -   [x] Update statistics for Rock Paper Scissors every time when players play it.
 -   [ ] Make a loader component.
 -   [ ] Make tic tac toe game:
 -   [ ] Make minesweeper game:

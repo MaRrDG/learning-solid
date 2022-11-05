@@ -1,6 +1,7 @@
 import { createSignal, For } from "solid-js";
 import clsx from "clsx";
 import { resetRockPaperSignals } from "../../utils";
+import { useStatistics } from "../../context/Statistics";
 
 // Variables
 const transition = "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300";
@@ -16,6 +17,8 @@ const [result, setResult] = createSignal();
 
 // Component
 const RockPaper = () => {
+    const [allStatistics, { updateRockPaperStatistics }] = useStatistics();
+
     const showFinalResult = (shape) => {
         setSelectedShape(shape);
         setRandomShape(shapes[Math.floor(Math.random() * shapes.length)]);
@@ -25,9 +28,16 @@ const RockPaper = () => {
         const getWin = wins.find((elem) => elem === [selectedShape(), randomShape()].join("-"));
         setResult(getEqual ? "equal" : getWin ? "win" : "lose");
 
+        // Update statistics context
+        updateRockPaperStatistics({
+            ...allStatistics()["Rock Paper Scissors"],
+            [result()]: allStatistics()["Rock Paper Scissors"][result()] + 1,
+        });
+
+        // Reset Signals
         setTimeout(() => {
             resetRockPaperSignals();
-        }, 2000);
+        }, 1500);
     };
 
     return (
