@@ -33,7 +33,7 @@ Here you can play games and have some statistics for these:
 -   [x] Make a loader component.
 -   [ ] Make tic tac toe game:
     -   [x] Make the UI.
-    -   [ ] Make the selection for the box.
+    -   [x] Make the selection for the box.
     -   [ ] Make the randomize selection for Player2.
     -   [ ] Show if you win/draw or lose.
     -   [ ] Update the statistics context.
