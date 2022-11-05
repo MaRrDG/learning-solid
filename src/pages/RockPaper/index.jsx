@@ -1,5 +1,6 @@
 import { createSignal, For } from "solid-js";
 import clsx from "clsx";
+import { resetRockPaperSignals } from "../../utils";
 
 // Variables
 const transition = "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300";
@@ -25,8 +26,8 @@ const RockPaper = () => {
         setResult(getEqual ? "equal" : getWin ? "win" : "lose");
 
         setTimeout(() => {
-            setShowFinal(false);
-        }, 1500);
+            resetRockPaperSignals();
+        }, 2000);
     };
 
     return (
@@ -34,14 +35,14 @@ const RockPaper = () => {
             <Switch>
                 <Match when={!showFinal()}>
                     <>
-                        <h1 className="text-white uppercase font-medium text-xl">Select your shape</h1>
+                        <h1 className="text-white uppercase font-medium text-2xl">Select your shape</h1>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 items-center">
                             <For each={shapes} fallback={<div>Loading...</div>}>
                                 {(item) => (
                                     <img
                                         src={`src/assets/images/${item.toLocaleLowerCase()}.png`}
                                         alt={item}
-                                        className={clsx("w-24 cursor-pointer", transition)}
+                                        className={clsx("w-36 cursor-pointer", transition)}
                                         onClick={() => showFinalResult(item)}
                                     />
                                 )}
@@ -50,7 +51,7 @@ const RockPaper = () => {
                     </>
                 </Match>
                 <Match when={showFinal()}>
-                    <h1 className="text-white uppercase font-medium text-5xl">
+                    <h1 className="text-white uppercase font-medium text-2xl">
                         Result:{" "}
                         <span
                             className={`text-${
@@ -62,13 +63,13 @@ const RockPaper = () => {
                     </h1>
                     <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 items-center">
                         <img
-                            className={clsx("w-24", transition)}
+                            className={clsx("w-36", transition)}
                             src={`src/assets/images/${selectedShape().toLocaleLowerCase()}.png`}
                             alt="player1"
                         />
                         <p className="text-3xl text-white font-medium">vs</p>
                         <img
-                            className={clsx("w-24", transition)}
+                            className={clsx("w-36", transition)}
                             src={`src/assets/images/${randomShape().toLocaleLowerCase()}.png`}
                             alt="player1"
                         />
@@ -79,5 +80,5 @@ const RockPaper = () => {
     );
 };
 
-export { setShowFinal };
+export { setShowFinal, setSelectedShape, setRandomShape, setResult };
 export default RockPaper;

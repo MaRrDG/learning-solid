@@ -3,14 +3,15 @@ import { Routes, Route, useLocation, useNavigate } from "@solidjs/router";
 import MainMenu from "./pages/MainMenu";
 import NotFound from "./pages/NotFound";
 import { Show } from "solid-js";
+import { resetAllSignals } from "./utils";
 
 const App = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
     return (
-        <div className="bg-gray-900 w-full h-full sm:h-screen sm:w-screen flex items-center justify-evenly flex-col">
-            <div className="mt-auto">
+        <div className="bg-gray-900 w-full min-h-screen h-full sm:h-screen sm:w-screen flex items-center justify-evenly flex-col">
+            <div className="mt-auto mb-5">
                 <Routes>
                     <Route path="/" component={<MainMenu />} />
                     <Route path="/rockpaper" component={<RockPaper />} />
@@ -27,7 +28,7 @@ const App = () => {
                             navigate(-1);
 
                             // Reset all signals
-                            setShowFinal(false);
+                            resetAllSignals();
                         }}
                         className="h-12 w-20 text-center rounded-md border border-transparent bg-indigo-500  text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         type="button"
