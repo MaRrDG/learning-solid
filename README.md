@@ -32,4 +32,9 @@ Here you can play games and have some statistics for these:
     -   [x] Update statistics for Rock Paper Scissors every time when players play it.
 -   [x] Make a loader component.
 -   [ ] Make tic tac toe game:
+    -   [x] Make the UI.
+    -   [ ] Make the selection for the box.
+    -   [ ] Make the randomize selection for Player2.
+    -   [ ] Show if you win/draw or lose.
+    -   [ ] Update the statistics context.
 -   [ ] Make minesweeper game:

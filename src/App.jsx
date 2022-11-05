@@ -6,6 +6,7 @@ import RockPaper from "./pages/RockPaper";
 import MainMenu from "./pages/MainMenu";
 import NotFound from "./pages/NotFound";
 import Statistics from "./pages/Statistics";
+import TicTacToe from "./pages/TicTacToe";
 
 const App = () => {
     const location = useLocation();
@@ -19,6 +20,7 @@ const App = () => {
                         <Route path="/" component={<MainMenu />} />
                         <Route path="/rockpaper" component={<RockPaper />} />
                         <Route path="/statistics" component={<Statistics />} />
+                        <Route path="/tictactoe" component={<TicTacToe />} />
 
                         {/* PAGE NOT FOUND */}
                         <Route path="*" component={<NotFound />} />
