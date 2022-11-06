@@ -1,19 +1,45 @@
-import { createSignal, For, Show } from "solid-js";
+import clsx from "clsx";
+import { createSignal, For, Match, Show, Switch } from "solid-js";
 import Loader from "../../components/Loader";
 
 const [selectedBoxNumbers, setSelectedBoxNumbers] = createSignal([]);
+const [waitForPlayer2, setWaitForPlayer2] = createSignal(false);
+
+const selectRandomBox = () => {
+    let randomIdx = Math.floor(Math.random() * 9);
+
+    // While randomIdx exists in selectedBoxNumbers array, we will generate a new number.
+    while (selectedBoxNumbers().find((elem) => elem.id === randomIdx)) {
+        randomIdx = Math.floor(Math.random() * 9);
+    }
+
+    setSelectedBoxNumbers((prev) => [...prev, { player: "player2", id: randomIdx }]);
+};
 
 const Box = ({ idx }) => {
     return (
         <div
             onClick={() => {
-                if (selectedBoxNumbers().find((elem) => elem === idx)) return;
-                setSelectedBoxNumbers((prev) => [...prev, idx]);
-                console.log(selectedBoxNumbers());
+                if (selectedBoxNumbers().find((elem) => elem === idx) || waitForPlayer2()) return;
+                setSelectedBoxNumbers((prev) => [...prev, { player: "player1", id: idx }]);
+                setWaitForPlayer2(true);
+
+                setTimeout(() => {
+                    setWaitForPlayer2(false);
+                    selectRandomBox();
+                }, 1000);
             }}
-            className="flex items-center justify-center w-16 h-16 border-2 border-white text-white font-medium text-4xl font-sans"
+            className={clsx(
+                "flex items-center justify-center w-16 h-16 border-2 border-white text-white font-medium text-4xl font-sans",
+                waitForPlayer2() ? "cursor-not-allowed" : "cursor-pointer"
+            )}
         >
-            <Show when={selectedBoxNumbers().find((elem) => elem === idx) ? true : false}>X</Show>
+            <Show when={selectedBoxNumbers().find((elem) => elem.id === idx) ? true : false}>
+                <Switch>
+                    <Match when={selectedBoxNumbers().find((elem) => elem.id === idx).player === "player1"}>X</Match>
+                    <Match when={selectedBoxNumbers().find((elem) => elem.id === idx).player === "player2"}>O</Match>
+                </Switch>
+            </Show>
         </div>
     );
 };
@@ -31,4 +57,5 @@ const TicTacToe = () => {
     );
 };
 
+export { setSelectedBoxNumbers, setWaitForPlayer2 };
 export default TicTacToe;

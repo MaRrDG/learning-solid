@@ -1,4 +1,5 @@
 import { setRandomShape, setResult, setSelectedShape, setShowFinal } from "../pages/RockPaper";
+import { setSelectedBoxNumbers, setWaitForPlayer2 } from "../pages/TicTacToe";
 
 export const resetRockPaperSignals = () => {
     setShowFinal(false);
@@ -7,6 +8,12 @@ export const resetRockPaperSignals = () => {
     setSelectedShape();
 };
 
+export const resetTicTacToeSignals = () => {
+    setSelectedBoxNumbers([]);
+    setWaitForPlayer2(false);
+};
+
 export const resetAllSignals = () => {
     resetRockPaperSignals();
+    resetTicTacToeSignals();
 };

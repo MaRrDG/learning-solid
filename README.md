@@ -10,6 +10,12 @@ Here you can play games and have some statistics for these:
 2. Rock Paper Scissors
 3. Minesweeper
 
+## Setup
+
+1. Clone the project
+2. Run this command in terminal: `npm install`
+3. To start the project use this command in terminal: `npm start`
+
 ## Commands
 
 -   npm start - Start the project using [VITE](https://vitejs.dev/).
@@ -34,7 +40,8 @@ Here you can play games and have some statistics for these:
 -   [ ] Make tic tac toe game:
     -   [x] Make the UI.
     -   [x] Make the selection for the box.
-    -   [ ] Make the randomize selection for Player2.
+    -   [x] Make the randomize selection for Player2.
     -   [ ] Show if you win/draw or lose.
     -   [ ] Update the statistics context.
+-   [ ] Make setup for netifly and make auto deploy.
 -   [ ] Make minesweeper game:
