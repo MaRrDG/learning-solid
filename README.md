@@ -41,7 +41,7 @@ Here you can play games and have some statistics for these:
     -   [x] Make the UI.
     -   [x] Make the selection for the box.
     -   [x] Make the randomize selection for Player2.
-    -   [ ] Show if you win/draw or lose.
-    -   [ ] Update the statistics context.
+    -   [x] Show if you win/draw or lose.
+    -   [x] Update the statistics context.
 -   [ ] Make setup for netifly and make auto deploy.
 -   [ ] Make minesweeper game:
