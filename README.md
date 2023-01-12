@@ -4,6 +4,9 @@
 
 With this project I learned how to use [SolidJS](https://www.solidjs.com/). I learned what is SolidJS and how to use it, how to use Router, how to use the Basic Reactivity, how to use Context, how to use the Control Flow that SolidJS offers us.
 
+
+
+
 Here you can play games and have some statistics for these:
 
 1. Tic Tac Toe
